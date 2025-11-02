@@ -1,0 +1,42 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class oddQuestion extends JFrame implements ActionListener {
+
+    private JTextField userField;
+    private JPasswordField passField;
+    private JButton loginBtn;
+
+    public oddQuestion() {
+        // Frame settings
+        setTitle("Login Form");
+        setSize(400, 250);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JPanel panel = new JPanel(new GridBagLayout());
+        panel.setBackground(new Color(245, 245, 245));
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        // Username Label
+        JLabel userLabel = new JLabel("Username:");
+        userLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(userLabel, gbc);
+
+        // Username Field
+        userField = new JTextField(15);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        panel.add(userField, gbc);
+
+        // Password Label
+        JLabel passLabel = new JLabel("Password:");
+        passLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        gbc.gridx = 0;
+        gbc.gridy = 1;
